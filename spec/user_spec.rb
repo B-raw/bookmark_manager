@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) do
+  let!(:user) do
     User.create(email: 'andy@gmail.com',
                 password: '123',
                 password_confirmation: '123')
@@ -15,7 +15,6 @@ describe User do
   it "returns error when password is wrong" do
     expect(User.authenticate(user.email, "456")).to be_nil
   end
-
 
 
 end
